@@ -1,8 +1,8 @@
 {
-    "name": "ffd",
-    "short_name": "ffd",
+    "name": "Flutter For Dev",
+    "short_name": "FFD",
     "start_url": ".",
-    "display": "minimal-ui",
+    "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
@@ -10,12 +10,12 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/Icon-192.png",
+            "src": "icons/icon.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "icons/Icon-512.png",
+            "src": "icons/icon.png",
             "sizes": "512x512",
             "type": "image/png"
         }

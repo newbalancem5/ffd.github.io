@@ -1,0 +1,11 @@
+{
+    "navbar":{
+        "title":"Flutter For Dev"
+    },
+    "info":{
+        "title": "Стараемся делиться всяким интересным в мире Flutter",
+        "telegram":"Telegram",
+        "twitter":"Twitter",
+        "github": "Github"
+    }
+}
