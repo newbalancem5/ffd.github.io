@@ -1,11 +1,11 @@
 {
     "name": "Flutter For Dev",
-    "short_name": "FFD",
+    "short_name": "Flutter For Dev",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Flutter For Dev",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
