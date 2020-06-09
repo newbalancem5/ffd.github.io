@@ -1,8 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:ffd/HyperLink/HyperLink.dart';
 import 'package:flutter/material.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 class SocialBlock extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -34,7 +38,8 @@ class SocialBlock extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.all(10.0),
-        child: MouseRegion(
+        child: MouseRegion(onHover: (event) {
+        },
                   child: GestureDetector(
               child: Text(tr("info.github"),
                   style: TextStyle(
@@ -43,9 +48,13 @@ class SocialBlock extends StatelessWidget {
                       fontSize: 20)),
               onTap: () {
                 launch("https://github.com/newbalancem5/flutter_info");
-              }),
+              })
         ),
       ),
+      // Padding(padding: EdgeInsets.all(10),
+      // child:  HyperLink(
+      // ),
+      // )
     ]);
   }
 }

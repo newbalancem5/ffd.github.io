@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:html' as html;
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class HyperLink extends StatefulWidget {
   final Widget children;
 
   HyperLink({
-    @required this.label,
+    this.label,
     this.action,
     this.style = const HyperLinkStyle(),
     this.enabled = true,
@@ -58,14 +58,21 @@ class _HyperLinkState extends State<HyperLink> {
   Widget build(BuildContext context) {
     return Container(
       height: _style.width,
-      width: _style.width,
-      child: Text("as"),
+      width: _style.height,
+      child: Padding(padding: EdgeInsets.all(10),
+      child: Row(
+        children: [
+          
+        ],
+      ),
+      )
     );
   }
 
 
 
   Widget _nameLink(TextStyle textStyle){
+    
    if (widget.child != null) {
       return widget.child;
     } else {
@@ -75,7 +82,7 @@ class _HyperLinkState extends State<HyperLink> {
       );
     }
 }
-
+// const twitterUrl = "https://twitter.com/FlutterForDev";
 
 Widget _href(TextStyle textStyle){
   return   GestureDetector(
@@ -85,7 +92,7 @@ Widget _href(TextStyle textStyle){
                   color: Colors.blue,
                   fontSize: 20)),
           onTap: () {
-            
+            html.window.open('https://myracledesign.de/blog', 'MyracleDesign');
           });
 }
 }
