@@ -1,9 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ffd/HyperLink/HyperLink.dart';
 import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:html' as html;
 
 class SocialBlock extends StatelessWidget {
 
@@ -51,10 +49,6 @@ class SocialBlock extends StatelessWidget {
               })
         ),
       ),
-      // Padding(padding: EdgeInsets.all(10),
-      // child:  HyperLink(
-      // ),
-      // )
     ]);
   }
 }

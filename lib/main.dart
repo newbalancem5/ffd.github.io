@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('ru', 'US')],
+      supportedLocales: [Locale('ru', 'Ru'), Locale('en', 'Us')],
       path: 'assets/localization', // <-- change patch to your
       fallbackLocale: Locale('ru'),
       child: MyApp()

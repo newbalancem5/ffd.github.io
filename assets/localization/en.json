@@ -1,0 +1,11 @@
+{
+    "navbar":{
+        "title":"Flutter For Dev"
+    },
+    "info":{
+        "title": "More interesting for Flutter world",
+        "telegram":"Telegram",
+        "twitter":"Twitter",
+        "github": "Github"
+    }
+}

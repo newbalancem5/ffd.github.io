@@ -1,3 +1,4 @@
+import 'package:ffd/Screen/Price.dart';
 import 'package:ffd/Screen/SocialBlock.dart';
 import 'package:ffd/Screen/TitleBlock.dart';
 import 'package:ffd/Screen/TitleInfo.dart';
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       // height: size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [TitleBlock(), TitleInfo(), SocialBlock()],
+        children: [TitleBlock(), TitleInfo(), SocialBlock(),PriceAdb()],
       ),
     );
   }
