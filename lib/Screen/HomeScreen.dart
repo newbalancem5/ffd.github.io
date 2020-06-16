@@ -1,3 +1,4 @@
+import 'package:ffd/HyperLink/SocialLink.dart';
 import 'package:ffd/Screen/Price.dart';
 import 'package:ffd/Screen/SocialBlock.dart';
 import 'package:ffd/Screen/TitleBlock.dart';
@@ -8,12 +9,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
-    return Container(
-      // height: size.height,
-      child: Column(
+    return  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [TitleBlock(), TitleInfo(), SocialBlock(),PriceAdb()],
-      ),
     );
   }
 }

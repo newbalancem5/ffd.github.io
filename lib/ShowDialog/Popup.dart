@@ -1,11 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-
-
-class PopupStyle{
+class PopupStyle {
   final Color color;
-  final double width;
-  final double height;
   final EdgeInsets padding;
   final TextStyle textStyle;
   final TextStyle textStyleTitle;
@@ -16,13 +15,12 @@ class PopupStyle{
   final CrossAxisAlignment crossAxisAlignment;
 
   const PopupStyle({
-    this.shape = const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+    this.shape = const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20))),
     this.textStyle,
     this.textStyleTitle,
     this.textOnly = false,
     this.color = Colors.green,
-    this.width = 325,
-    this.height = 260,
     this.borderRadius = const BorderRadius.all(Radius.circular(20)),
     this.padding = const EdgeInsets.only(top: 26),
     this.outline = false,
@@ -31,7 +29,6 @@ class PopupStyle{
 }
 
 class Popup extends StatefulWidget {
-
   final String title;
   final String info;
   final PopupStyle style;
@@ -40,79 +37,115 @@ class Popup extends StatefulWidget {
   final Widget child;
   final String label;
 
-  Popup({
-    this.label,
-    this.child,
-    this.title,
-    this.info,
-    this.button,
-    this.children,
-    this.style
-  });
-
-
-
+  Popup(
+      {this.label,
+      this.child,
+      this.title,
+      this.info,
+      this.button,
+      this.children,
+      this.style});
 
   @override
   _PopupState createState() => _PopupState();
 }
 
-class _PopupState extends State<Popup>  with SingleTickerProviderStateMixin {
-  PopupStyle get _style => widget.style;
+class _PopupState extends State<Popup> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return 
-      Column(
-        mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: _popupContent(),
-                ),
-              ]);
-  }
-
-
-
-   Widget _popupContent() {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme.bodyText2;
-
-    final textStyleTitle = textTheme
-        .copyWith(
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-        );
-
-    final textStyleInfo = textTheme.copyWith(
-      fontSize: 16,
-      fontWeight: FontWeight.normal,
-    );
-
+    Size size = MediaQuery.of(context).size;
+    // Size width = MediaQuery.of(context).size;
+    final font = MediaQuery.of(context).textScaleFactor;
     return Container(
-     height: 300,
-     width: 300,
-      alignment: Alignment.center,
-      decoration: ShapeDecoration(
-        color: Theme.of(context).backgroundColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.zero,
-        child: Column(
+      height: size.height*0.9,
+      width: size.width*0.4,
+      child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text('data'),
-            Padding(padding: EdgeInsets.only(top: 20, left: 39, right: 39), child: Text('asd')),
-          ],
-        ),
-      ),
+            Container(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: Text(
+                tr("price.title"),
+                style: GoogleFonts.robotoSlab(
+                  color: Colors.black,
+                  fontStyle: FontStyle.normal,
+                  fontSize: font*20,
+                  decoration: TextDecoration.none,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: _popupContent(),
+            ),
+            Container(
+              child: _buttonConnect(),
+            )
+          ]),
     );
   }
 
+  Widget _popupContent() {
+    final font = MediaQuery.of(context).textScaleFactor;
+    return Container(
+      alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.only(top:20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                tr("price.info"),
+                style: GoogleFonts.robotoSlab(
+                    color: Colors.black,
+                    fontStyle: FontStyle.normal,
+                    fontSize: font*20),
+                textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  child: Text(
+                    tr("price.price1"),
+                    style: GoogleFonts.robotoSlab(
+                      color: Colors.black,
+                      fontStyle: FontStyle.normal,
+                      fontSize: font*14,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  child: Text(
+                    tr("price.price2"),
+                    style: GoogleFonts.robotoSlab(
+                      color: Colors.black,
+                      fontStyle: FontStyle.normal,
+                      fontSize: font*14,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+   
+    );
+  }
+
+  Widget _buttonConnect(){
+    return FlatButton(
+        child: Text("Обратиться"),
+        onPressed: (){
+        launch("tg://resolve?domain=newbalancem5");
+        },
+      );
+  }
 }
