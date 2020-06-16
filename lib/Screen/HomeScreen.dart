@@ -1,4 +1,4 @@
-import 'package:ffd/HyperLink/SocialLink.dart';
+// import 'package:ffd/HyperLink/SocialLink.dart';
 import 'package:ffd/Screen/Price.dart';
 import 'package:ffd/Screen/SocialBlock.dart';
 import 'package:ffd/Screen/TitleBlock.dart';

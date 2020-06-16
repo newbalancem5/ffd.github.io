@@ -31,7 +31,9 @@ dependencies:
   google_fonts:
   easy_localization:
   url_launcher:
+  flutter_cursor: ^0.1.3
 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
