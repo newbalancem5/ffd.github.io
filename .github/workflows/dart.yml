@@ -24,7 +24,7 @@ jobs:
     - run: flutter build web
 #     - run: flutter build apk
     - run: flutter build apk --debug --split-per-abi
-    - name: Release APK
+      name: Release APK
     - uses: actions/upload-artifact@v2
       with:
         name: release-apk
