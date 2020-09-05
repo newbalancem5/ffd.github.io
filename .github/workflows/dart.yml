@@ -26,4 +26,5 @@ jobs:
     - name: Create a Realease APK
       uses: actions/upload-artifact@v1
       with:
-        artifacts: "build/app/outputs/apk/release/*.apk"
+        name: release-apk
+        artifacts: "build/app/outputs/apk/release/app-release.apk"
