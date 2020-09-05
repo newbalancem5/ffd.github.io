@@ -26,5 +26,5 @@ jobs:
     - name: Create a Realease APK
       uses: actions/upload-artifact@v1
       with:
-        name: release-apk
-        path: build/app/outputs/apk/release/app-release.apk
+        token: ${{ secrets.ffd }}
+        artifacts: "build/app/outputs/apk/release/*.apk"
