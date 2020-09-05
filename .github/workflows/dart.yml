@@ -24,3 +24,17 @@ jobs:
         flutter-version: '1.17.3'
     - run: flutter pub get
     - run: flutter build apk
+    - name: Create Release APK
+    id: create_release
+    uses: actions/create-release@v1
+    env:
+      GITHUB_TOKEN: ${{ secrets.ffd }} # This token is provided by Actions, you do not need to create your own token
+    with:
+      tag_name: ${{ github.ref }}
+      release_name: Release ${{ github.ref }}
+      body: |
+        Changes in this Release
+        - First Change
+        - Second Change
+      draft: false
+      prerelease: false
