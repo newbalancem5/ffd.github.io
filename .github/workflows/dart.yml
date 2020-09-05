@@ -24,8 +24,8 @@ jobs:
     - run: flutter build web
 #     - run: flutter build apk
     - run: flutter build apk --debug --split-per-abi
-    - name: Create a Release APK
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "build/app/outputs/apk/debug/app-release.apk"
-        token: ${{ secrets.FFD }}
+#     - name: Create a Release APK
+#       uses: ncipollo/release-action@v1
+#       with:
+#         artifacts: "build/app/outputs/apk/debug/app-release.apk"
+#         token: ${{ secrets.FFD }}
