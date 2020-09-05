@@ -25,7 +25,7 @@ jobs:
     - run: flutter build apk
     - name: Upload artifact
     - name: Create a Realease APK
-      uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v1
       with:
          artifacts: "build/app/outputs/apk/release/*.apk"
          token: ${{secrets.ffd}}
