@@ -1,6 +1,4 @@
-// import 'package:ffd/HyperLink/SocialLink.dart';
-import 'package:ffd/News/Block_News.dart';
-// import 'package:ffd/Screen/Price.dart';
+import 'package:ffd/News/Button_News.dart';
 import 'package:ffd/Screen/SocialBlock.dart';
 import 'package:ffd/Screen/TitleBlock.dart';
 import 'package:ffd/Screen/TitleInfo.dart';
@@ -16,8 +14,7 @@ class HomeScreen extends StatelessWidget {
         TitleBlock(),
         TitleInfo(),
         SocialBlock(),
-        // PriceAdb(),
-        BlockNews()
+        ButtonNews(),
       ],
     );
   }
