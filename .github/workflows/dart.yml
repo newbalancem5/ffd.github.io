@@ -25,10 +25,20 @@ jobs:
 #     - run: flutter build apk
     - run: flutter build apk --debug --split-per-abi
     - run: flutter build apk --release 
-    - name: Push APK to Releases
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.FFD }} # This token is provided by Actions, you do not need to create your own token
       with:
-        artifacts: "build/app/outputs/apk/debug/*.apk"
-        token: ${{ secrets.FFD }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
     #   name: Release APK
     # - uses: actions/upload-artifact@v2
     #   with:
