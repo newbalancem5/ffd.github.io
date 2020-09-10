@@ -25,8 +25,8 @@ jobs:
 #     - run: flutter build apk
     - run: flutter build apk --debug --split-per-abi
     - run: flutter build apk --release 
-    - name: Create a Release APK
-    - uses: ncipollo/release-action@v1
+    - name: Push APK to Releases
+      uses: ncipollo/release-action@v1
       with:
         artifacts: "build/app/outputs/apk/debug/*.apk"
         token: ${{ secrets.FFD }}
