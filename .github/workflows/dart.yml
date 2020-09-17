@@ -21,10 +21,10 @@ jobs:
         channel: beta
     - run: flutter config --enable-web
     - run: flutter pub get
-    - run: flutter build web
+#     - run: flutter build web
 #     - run: flutter build apk
-    - run: flutter build apk --debug --split-per-abi
-    - run: flutter build apk --release --split-per-abi
+#     - run: flutter build apk --debug --split-per-abi
+#     - run: flutter build apk --release --split-per-abi
     - name: Build APK
       run: flutter build apk
 
@@ -43,7 +43,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.FFD }}
 #     - name: Create Release
 #       id: create_release
 #       uses: actions/create-release@v1
