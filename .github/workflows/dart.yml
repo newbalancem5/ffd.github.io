@@ -24,18 +24,18 @@ jobs:
     - run: flutter build web
 #     - run: flutter build apk
     - run: flutter build apk --release --split-per-abi
-    # - name: Create Release
-    #   id: create_release
-    #   uses: actions/create-release@v1
-    #   env:
-    #       GITHUB_TOKEN: ${{ secrets.FFD }} 
-    #   with:
-    #       tag_name: ${{ github.ref }}
-    #       release_name: Release ${{ github.ref }}
-    #       body: |
-    #         Release
-    #       draft: false
-    #       prerelease: false
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.FFD }} 
+      with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release
+          draft: false
+          prerelease: false
     - uses: actions/upload-artifact@v1
       with:
         name: release-apk
