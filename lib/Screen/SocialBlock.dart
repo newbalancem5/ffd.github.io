@@ -1,7 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../const/link_url/link.dart';
 
 class SocialBlock extends StatelessWidget {
   @override
@@ -17,14 +17,13 @@ class SocialBlock extends StatelessWidget {
                 style: TextStyle(
                     decoration: TextDecoration.none,
                     color: Colors.blue,
-                    fontSize: 20)),
-            onTap: () {
-              launch("tg://resolve?domain=flutterdevru");
-            }),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GestureDetector(
+                    fontSize: 20),
+              ),
+              onTap: () {}),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: GestureDetector(
               child: Text(
                 ("Twitter"),
                 style: TextStyle(
@@ -49,11 +48,10 @@ class SocialBlock extends StatelessWidget {
                     fontSize: 20),
               ),
               onTap: () {
-                
-                launchUrl(Uri());
-              })
-        ),
-      ),
+                launchUrl(Uri.parse(LinkSocial.urlgithub));
+              },
+            ),
+          ),
         ),
       ],
     );
