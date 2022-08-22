@@ -19,21 +19,28 @@ class SocialBlock extends StatelessWidget {
                     color: Colors.blue,
                     fontSize: 20),
               ),
-              onTap: () {}),
+              onTap: () {
+                launchUrl(
+                  Uri.parse(LinkSocial.urltelegram),
+                );
+              }),
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: GestureDetector(
-              child: Text(
-                ("Twitter"),
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20),
-              ),
-              onTap: () {
-                Uri.parse("https://twitter.com/FlutterForDev");
-              }),
+            child: Text(
+              ("Twitter"),
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20),
+            ),
+            onTap: () {
+              launchUrl(
+                Uri.parse(LinkSocial.urltwitter),
+              );
+            },
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -48,7 +55,9 @@ class SocialBlock extends StatelessWidget {
                     fontSize: 20),
               ),
               onTap: () {
-                launchUrl(Uri.parse(LinkSocial.urlgithub));
+                launchUrl(
+                  Uri.parse(LinkSocial.urlgithub),
+                );
               },
             ),
           ),
