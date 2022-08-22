@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,8 +16,8 @@ class PopupStyle {
   const PopupStyle({
     this.shape = const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(20))),
-    this.textStyle,
-    this.textStyleTitle,
+    required this.textStyle,
+    required this.textStyleTitle,
     this.textOnly = false,
     this.color = Colors.green,
     this.borderRadius = const BorderRadius.all(Radius.circular(20)),
@@ -38,13 +37,13 @@ class Popup extends StatefulWidget {
   final String label;
 
   Popup(
-      {this.label,
-      this.child,
-      this.title,
-      this.info,
-      this.button,
-      this.children,
-      this.style});
+      {required this.label,
+      required this.child,
+      required this.title,
+      required this.info,
+      required this.button,
+      required this.children,
+      required this.style});
 
   @override
   _PopupState createState() => _PopupState();
@@ -57,8 +56,8 @@ class _PopupState extends State<Popup> with SingleTickerProviderStateMixin {
     // Size width = MediaQuery.of(context).size;
     final font = MediaQuery.of(context).textScaleFactor;
     return Container(
-      height: size.height*0.9,
-      width: size.width*0.4,
+      height: size.height * 0.9,
+      width: size.width * 0.4,
       child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -67,11 +66,11 @@ class _PopupState extends State<Popup> with SingleTickerProviderStateMixin {
             Container(
               padding: const EdgeInsets.only(bottom: 40),
               child: Text(
-                tr("price.title"),
+                ("price.title"),
                 style: GoogleFonts.robotoSlab(
                   color: Colors.black,
                   fontStyle: FontStyle.normal,
-                  fontSize: font*20,
+                  fontSize: font * 20,
                   decoration: TextDecoration.none,
                 ),
               ),
@@ -91,61 +90,62 @@ class _PopupState extends State<Popup> with SingleTickerProviderStateMixin {
     final font = MediaQuery.of(context).textScaleFactor;
     return Container(
       alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.only(top:20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                tr("price.info"),
-                style: GoogleFonts.robotoSlab(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              ("price.info"),
+              style: GoogleFonts.robotoSlab(
+                  color: Colors.black,
+                  fontStyle: FontStyle.normal,
+                  fontSize: font * 20),
+              textAlign: TextAlign.center,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                child: Text(
+                  ("price.price1"),
+                  style: GoogleFonts.robotoSlab(
                     color: Colors.black,
                     fontStyle: FontStyle.normal,
-                    fontSize: font*20),
-                textAlign: TextAlign.center,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  child: Text(
-                    tr("price.price1"),
-                    style: GoogleFonts.robotoSlab(
-                      color: Colors.black,
-                      fontStyle: FontStyle.normal,
-                      fontSize: font*14,
-                      decoration: TextDecoration.none,
-                    ),
+                    fontSize: font * 14,
+                    decoration: TextDecoration.none,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Container(
-                  child: Text(
-                    tr("price.price2"),
-                    style: GoogleFonts.robotoSlab(
-                      color: Colors.black,
-                      fontStyle: FontStyle.normal,
-                      fontSize: font*14,
-                      decoration: TextDecoration.none,
-                    ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                child: Text(
+                  ("price.price2"),
+                  style: GoogleFonts.robotoSlab(
+                    color: Colors.black,
+                    fontStyle: FontStyle.normal,
+                    fontSize: font * 14,
+                    decoration: TextDecoration.none,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-   
+      ),
     );
   }
 
-  Widget _buttonConnect(){
-    return FlatButton(
-        child: Text("Обратиться"),
-        onPressed: (){
-        launch("tg://resolve?domain=newbalancem5");
-        },
-      );
+  Widget _buttonConnect() {
+    return TextButton(
+      child: Text("Обратиться"),
+      onPressed: () {
+        launchUrl(
+          Uri(path: "tg://resolve?domain=newbalancem5"),
+        );
+      },
+    );
   }
 }

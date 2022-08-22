@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 class PriceAdb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      disabledTextColor: Colors.red,
-      hoverColor: Colors.transparent,
-      color: Colors.blue,
-      textColor: Colors.white,
+    return TextButton(
+      // disabledTextColor: Colors.red,
+      // hoverColor: Colors.transparent,
+      // color: Colors.blue,
+      // textColor: Colors.white,
       child: Text("Реклама"),
       onPressed: () {
         showDialog(

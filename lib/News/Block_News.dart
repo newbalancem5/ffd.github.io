@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,14 +13,14 @@ class BlockNews extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            tr("newsblock.newsday.title"),
+            ("newsblock.newsday.title"),
             style: GoogleFonts.robotoSlab(
                 color: Colors.black,
                 decoration: TextDecoration.none,
                 fontSize: 17),
           ),
           Text(
-            tr("newsblock.newsday.info"),
+            ("newsblock.newsday.info"),
             style: GoogleFonts.robotoSlab(
                 color: Colors.black,
                 decoration: TextDecoration.none,
