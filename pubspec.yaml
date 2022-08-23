@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: 
-  google_fonts:
-  flutter_cursor: 
-  url_launcher: 
+  google_fonts: 
+  url_launcher: ^6.1.5
+  auto_route: ^5.0.1
 
   
 dev_dependencies:
