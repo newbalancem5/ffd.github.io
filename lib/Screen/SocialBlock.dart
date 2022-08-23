@@ -1,54 +1,73 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
-class SocialBlock extends StatelessWidget {
+import '../const/link_url/link.dart';
 
+class SocialBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-      Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GestureDetector(
-            child: Text(tr("info.telegram"),
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20)),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: GestureDetector(
+            child: Text(
+              ("Telegram"),
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20),
+            ),
             onTap: () {
-              launch("tg://resolve?domain=flutterdevru");
-            }),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GestureDetector(
-            child: Text(tr("info.twitter"),
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20)),
-            onTap: () {
-              launch("https://twitter.com/FlutterForDev");
-            }),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: MouseRegion(onHover: (event) {
-        },
-                  child: GestureDetector(
-              child: Text(tr("info.github"),
-                  style: TextStyle(
-                      decoration: TextDecoration.none,
-                      color: Colors.blue,
-                      fontSize: 20)),
-              onTap: () {
-                launch("https://github.com/newbalancem5/flutter_info");
-              })
+              launchUrl(
+                Uri.parse(LinkSocial.urltelegram),
+              );
+            },
+          ),
         ),
-      ),
-    ]);
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: GestureDetector(
+            child: Text(
+              ("Twitter"),
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20),
+            ),
+            onTap: () {
+              launchUrl(
+                Uri.parse(LinkSocial.urltwitter),
+              );
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: MouseRegion(
+            cursor: MouseCursor.defer,
+            onHover: (event) {},
+            child: GestureDetector(
+              child: Text(
+                ("Github"),
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
+              ),
+              onTap: () {
+                launchUrl(
+                  Uri.parse(
+                    LinkSocial.urlgithub,
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

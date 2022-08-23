@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +26,7 @@ class NewsBLockWeekOne extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  tr("newsblock.week1.news1.title"),
+                  ("newsblock.week1.news1.title"),
                   style: GoogleFonts.montserrat(
                     color: Colors.black,
                     fontStyle: FontStyle.normal,

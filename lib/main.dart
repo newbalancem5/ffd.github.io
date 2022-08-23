@@ -1,15 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:ffd/Screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    EasyLocalization(
-      supportedLocales: [Locale('ru', 'Ru'), Locale('en', 'Us')],
-      path: 'assets/localization', // <-- change patch to your
-      fallbackLocale: Locale('ru'),
-      child: MyApp()
-    ),
+    MyApp(),
   );
 }
 
@@ -18,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: tr("navbar.title"),
+      title: ("navbar.title"),
       home: HomeScreen(),
     );
   }
