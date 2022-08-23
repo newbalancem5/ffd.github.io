@@ -12,18 +12,19 @@ class SocialBlock extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: GestureDetector(
-              child: Text(
-                ("Telegram"),
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20),
-              ),
-              onTap: () {
-                launchUrl(
-                  Uri.parse(LinkSocial.urltelegram),
-                );
-              }),
+            child: Text(
+              ("Telegram"),
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20),
+            ),
+            onTap: () {
+              launchUrl(
+                Uri.parse(LinkSocial.urltelegram),
+              );
+            },
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -45,18 +46,22 @@ class SocialBlock extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: MouseRegion(
+            cursor: MouseCursor.defer,
             onHover: (event) {},
             child: GestureDetector(
               child: Text(
                 ("Github"),
                 style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.blue,
-                    fontSize: 20),
+                  decoration: TextDecoration.none,
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
               ),
               onTap: () {
                 launchUrl(
-                  Uri.parse(LinkSocial.urlgithub),
+                  Uri.parse(
+                    LinkSocial.urlgithub,
+                  ),
                 );
               },
             ),
